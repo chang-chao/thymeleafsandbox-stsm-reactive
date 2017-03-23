@@ -28,23 +28,20 @@ import thymeleafsandbox.stsm.business.entities.repositories.VarietyRepository;
 
 @Service
 public class VarietyService {
-    
-    @Autowired
-    private VarietyRepository varietyRepository;
-    
-    
-    public VarietyService() {
-        super();
-    }
-    
-    
-    
-    public List<Variety> findAll() {
-        return this.varietyRepository.findAll();
-    }
 
-    public Variety findById(final Integer id) {
-        return this.varietyRepository.findById(id);
-    }
-    
+  @Autowired
+  private VarietyRepository varietyRepository;
+
+  public VarietyService() {
+    super();
+  }
+
+  public List<Variety> findAll() {
+    return this.varietyRepository.findAll();
+  }
+
+  public Variety findById(final Integer id) {
+    return this.varietyRepository.findById(id);
+  }
+
 }

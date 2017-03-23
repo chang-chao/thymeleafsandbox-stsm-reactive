@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ========================================================================= -->
-<!--                                                                           -->
-<!--   Copyright (c) 2011-2016, The THYMELEAF team (http://www.thymeleaf.org)  -->
-<!--                                                                           -->
-<!--   Licensed under the Apache License, Version 2.0 (the "License");         -->
-<!--   you may not use this file except in compliance with the License.        -->
-<!--   You may obtain a copy of the License at                                 -->
-<!--                                                                           -->
-<!--       http://www.apache.org/licenses/LICENSE-2.0                          -->
-<!--                                                                           -->
-<!--   Unless required by applicable law or agreed to in writing, software     -->
-<!--   distributed under the License is distributed on an "AS IS" BASIS,       -->
-<!--   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or         -->
-<!--   implied. See the License for the specific language governing            -->
-<!--   permissions and limitations under the License.                          -->
-<!--                                                                           -->
+<!-- -->
+<!-- Copyright (c) 2011-2016, The THYMELEAF team (http://www.thymeleaf.org) -->
+<!-- -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!-- -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!-- -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or -->
+<!-- implied. See the License for the specific language governing -->
+<!-- permissions and limitations under the License. -->
+<!-- -->
 <!-- ========================================================================= -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -34,38 +34,38 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.BUILD-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-  <organization>
-    <name>The THYMELEAF team</name>
-    <url>http://www.thymeleaf.org</url>
-  </organization>
-  
-  <scm>
-    <url>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</url>
-    <connection>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</connection>
-    <developerConnection>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</developerConnection>
-  </scm>
-  
-  <developers>
-    <developer>
-      <id>dfernandez</id>
-      <name>Daniel Fernandez</name>
-      <email>daniel.fernandez AT 11thlabs DOT org</email>
-      <roles>
-        <role>Project admin</role>
-      </roles>
-     </developer>
-  </developers>
+	<organization>
+		<name>The THYMELEAF team</name>
+		<url>http://www.thymeleaf.org</url>
+	</organization>
+
+	<scm>
+		<url>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</url>
+		<connection>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</connection>
+		<developerConnection>scm:git:git@github.com:thymeleaf/thymeleafsandbox-stsm-reactive.git</developerConnection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>dfernandez</id>
+			<name>Daniel Fernandez</name>
+			<email>daniel.fernandez AT 11thlabs DOT org</email>
+			<roles>
+				<role>Project admin</role>
+			</roles>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,7 +94,8 @@
 			<artifactId>reactor-netty</artifactId>
 		</dependency>
 
-		<!-- TODO * There is no Spring Boot starter for Thymeleaf + Spring 5 integration yet.    -->
+		<!-- TODO * There is no Spring Boot starter for Thymeleaf + Spring 5 integration
+			yet. -->
 		<dependency>
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf-spring5</artifactId>
@@ -105,6 +106,19 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7-1</version>
+		</dependency>
+
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>webjars-locator</artifactId>
+    <version>0.32</version>
+</dependency>
 
 	</dependencies>
 
