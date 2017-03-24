@@ -71,11 +71,11 @@ public class AddSeedStarterController extends SeedStarterContoller {
   public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult,
       final ModelMap model) {
     if (bindingResult.hasErrors()) {
-      return "seedstartermng";
+      return "starter_add";
     }
     this.seedStarterService.add(seedStarter);
     model.clear();
-    return "redirect:/list";
+    return "redirect:" + SeedStarterContoller.PATH + "/list";
   }
 
 }

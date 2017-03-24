@@ -41,7 +41,7 @@ public class ListSeedStarterController extends SeedStarterContoller{
   }
 
   @RequestMapping({ "/", "list" })
-  public String showSeedstarters(final SeedStarter seedStarter) {
+  public String showSeedstarters() {
     return "starter_list";
   }
 }
