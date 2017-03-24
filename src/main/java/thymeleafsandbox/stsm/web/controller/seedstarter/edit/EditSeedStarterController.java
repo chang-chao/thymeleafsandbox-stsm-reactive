@@ -17,7 +17,7 @@
  *
  * =============================================================================
  */
-package thymeleafsandbox.stsm.web.controller;
+package thymeleafsandbox.stsm.web.controller.seedstarter.edit;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -28,38 +28,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import thymeleafsandbox.stsm.business.entities.Feature;
-import thymeleafsandbox.stsm.business.entities.Row;
 import thymeleafsandbox.stsm.business.entities.SeedStarter;
 import thymeleafsandbox.stsm.business.entities.Type;
 import thymeleafsandbox.stsm.business.entities.Variety;
 import thymeleafsandbox.stsm.business.services.SeedStarterService;
 import thymeleafsandbox.stsm.business.services.VarietyService;
+import thymeleafsandbox.stsm.web.controller.seedstarter.SeedStarterContoller;
 
 @Controller
-public class SeedStarterMngController {
-  public static final String PATH = "seedstartermng";
-
+public class EditSeedStarterController extends SeedStarterContoller {
+  @Autowired
   private VarietyService varietyService;
+  @Autowired
   private SeedStarterService seedStarterService;
-
-  public SeedStarterMngController() {
-    super();
-  }
-
-  @Autowired
-  public void setVarietyService(final VarietyService varietyService) {
-    this.varietyService = varietyService;
-  }
-
-  @Autowired
-  public void setSeedStarterService(final SeedStarterService seedStarterService) {
-    this.seedStarterService = seedStarterService;
-  }
 
   @ModelAttribute("allTypes")
   public List<Type> populateTypes() {
@@ -76,24 +61,13 @@ public class SeedStarterMngController {
     return this.varietyService.findAll();
   }
 
-  @ModelAttribute("allSeedStarters")
-  public List<SeedStarter> populateSeedStarters() {
-    return this.seedStarterService.findAll();
-  }
-
-  @RequestMapping({ "/", PATH })
+  @RequestMapping(path = "/edit", method = RequestMethod.GET)
   public String showSeedstarters(final SeedStarter seedStarter) {
     seedStarter.setDatePlanted(Calendar.getInstance().getTime());
-    return "seedstartermng";
+    return "starter_add";
   }
 
-  @RequestMapping(value = "/seedstartermng/del/{id}")
-  public String delSeedstarter(@PathVariable(value = "id") final int id) {
-    this.seedStarterService.delete(id);
-    return "redirect:/seedstartermng";
-  }
-
-  @RequestMapping(value = "/seedstartermng", params = { "save" })
+  @RequestMapping(path = "/edit", method = RequestMethod.POST)
   public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult,
       final ModelMap model) {
     if (bindingResult.hasErrors()) {
@@ -101,20 +75,7 @@ public class SeedStarterMngController {
     }
     this.seedStarterService.add(seedStarter);
     model.clear();
-    return "redirect:/seedstartermng";
-  }
-
-  @RequestMapping(value = "/seedstartermng", params = { "addRow" })
-  public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
-    seedStarter.getRows().add(new Row());
-    return "seedstartermng";
-  }
-
-  @RequestMapping(value = "/seedstartermng", params = { "removeRow" })
-  public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult,
-      @RequestParam(value = "removeRow", required = false) Integer rowId) {
-    seedStarter.getRows().remove(rowId.intValue());
-    return "seedstartermng";
+    return "redirect:/list";
   }
 
 }

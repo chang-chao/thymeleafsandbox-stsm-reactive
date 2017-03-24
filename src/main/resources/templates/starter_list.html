@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/stsm.css" th:href="@{/css/stsm.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/starter_list" th:href="@{/css/starter_list}"/>
   </head>
 
 <body>
@@ -34,6 +34,7 @@
             <th style="width:70px" th:text="#{seedstarter.type}">Type</th>
             <th th:text="#{seedstarter.features}">Features</th>
             <th th:text="#{seedstarter.rows}">Rows</th>
+            <th style="width:70px">Edit</th>
             <th style="width:70px">Delete</th>
           </tr>
         </thead>
@@ -59,6 +60,9 @@
               </table>
             </td>
             <td>
+            <a class="btn btn-info" href="starter_add.html" role="button" th:href="@{/seedstartermng/edit/{id}(id=${iterStat.index})}">Edit</a>
+            </td>
+            <td>
             <a class="btn btn-warning " href="#" role="button" th:href="@{/seedstartermng/del/{id}(id=${iterStat.index})}">Delete</a>
             </td>
           </tr>
@@ -69,13 +73,15 @@
             <td>PLASTIC</td>
             <td>Turf</td>
             <td></td>
+            <td><a class="btn btn-info" href="starter_add.html" role="button">Edit</a></td>
             <td><a class="btn btn-warning" href="#" role="button">Delete</a></td>
           </tr>
 
         </tbody>
       </table>
 
-  <button type="button" class="btn btn-primary">Add</button>
+
+  <a class="btn btn-primary " href="starter_add.html" role="button" th:href="@{/seedstarter/add}">Add</a>
 
 </div>
 </body>

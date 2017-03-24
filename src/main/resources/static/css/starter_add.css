@@ -1,0 +1,9 @@
+.form-horizontal .form-group {
+	margin-right:0px;
+	margin-left:0px;
+}
+
+input[type=checkbox] {
+  /* there is a shadow line above the upper side of the checkbox(chrome)*/
+  box-shadow: 0 0 0 0;
+}
