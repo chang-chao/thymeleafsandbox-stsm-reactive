@@ -39,7 +39,7 @@ public class SeedStarterRepository {
     firstSeedStarter.setId(0);
     firstSeedStarter.setCovered(true);
     firstSeedStarter.setType(Type.PLASTIC);
-    firstSeedStarter.setFeatures(Feature.ALL);
+    firstSeedStarter.setFeatures(Feature.values());
     seedStarters.add(firstSeedStarter);
   }
 

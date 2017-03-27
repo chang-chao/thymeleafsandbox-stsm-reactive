@@ -48,12 +48,12 @@ public class EditSeedStarterController extends SeedStarterContoller {
 
   @ModelAttribute("allTypes")
   public List<Type> populateTypes() {
-    return Arrays.asList(Type.ALL);
+    return Arrays.asList(Type.values());
   }
 
   @ModelAttribute("allFeatures")
   public List<Feature> populateFeatures() {
-    return Arrays.asList(Feature.ALL);
+    return Arrays.asList(Feature.values());
   }
 
   @ModelAttribute("allVarieties")
